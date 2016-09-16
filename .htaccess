@@ -1,0 +1,30 @@
+<Files ~ ".dat$|.inc$|.ini$|.cfg$|.log$|.class.php$|.inc.php$|config.php$">
+Order allow,deny
+Deny from All
+Satisfy All
+</Files>
+
+DirectoryIndex index.php index.html
+
+php_value default_mimetype text/html
+
+php_flag register_globals Off
+
+php_flag magic_quotes_gpc Off
+php_flag magic_quotes_runtime Off
+php_flag magic_quotes_sybase Off
+
+# Debug
+php_value error_reporting -1
+php_flag display_errors Off
+php_flag log_errors On
+
+
+Options -Indexes
+
+php_value default_charset UTF-8
+AddDefaultCharset UTF-8
+
+ErrorDocument 403 /err/403.php
+ErrorDocument 404 /err/404.php
+ErrorDocument 503 /err/503.php
